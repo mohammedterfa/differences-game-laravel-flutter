@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game/controllers/auth/LoginController.dart';
+import 'package:game/utils/Images.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends GetView<LoginController> {
@@ -7,6 +8,16 @@ class LoginPage extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Form(
+            child: Column(
+              children: [Image.asset(MyImages.logo)],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

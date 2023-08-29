@@ -9,7 +9,7 @@ trait ResponseTrait
         return response([
             'status' => true,
             'code' => 200,
-            'msd' => $msg,
+            'msg' => $msg,
             'data' => $data
         ], 200);
     }
@@ -20,7 +20,7 @@ trait ResponseTrait
         return response([
             'status' => false,
             'code' => 500,
-            'msd' => $msg
+            'msg' => $msg
         ], 500);
     }
 }

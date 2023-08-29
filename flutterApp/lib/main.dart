@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:game/bindings/HomeController.dart';
 import 'package:game/bindings/auth/LoginBinding.dart';
+import 'package:game/pages/HomePage.dart';
 import 'package:game/pages/auth/LoginPage.dart';
 import 'package:get/get.dart';
 
@@ -20,6 +22,11 @@ class MyApp extends StatelessWidget {
           name: '/login',
           page: () => LoginPage(),
           binding: LoginBinding(),
+        ),
+        GetPage(
+          name: '/home',
+          page: () => HomePage(),
+          binding: HomeBinding(),
         ),
       ],
     );

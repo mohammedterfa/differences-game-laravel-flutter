@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:game/bindings/HomeController.dart';
 import 'package:game/bindings/auth/LoginBinding.dart';
+import 'package:game/bindings/auth/SignUpBinding.dart';
 import 'package:game/pages/HomePage.dart';
 import 'package:game/pages/auth/LoginPage.dart';
+import 'package:game/pages/auth/SignupPage.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -16,17 +18,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: '/login',
+      initialRoute: '/signup',
       getPages: [
         GetPage(
           name: '/login',
-          page: () => LoginPage(),
+          page: () => const LoginPage(),
           binding: LoginBinding(),
         ),
         GetPage(
           name: '/home',
-          page: () => HomePage(),
+          page: () => const HomePage(),
           binding: HomeBinding(),
+        ),
+        GetPage(
+          name: '/signup',
+          page: () => const SignUpPage(),
+          binding: SignUpBinding(),
         ),
       ],
     );

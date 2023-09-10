@@ -23,4 +23,15 @@ trait ResponseTrait
             'msg' => $msg
         ], 500);
     }
+
+
+    public function validatorError($error)
+    {
+        return response([
+            'status' => true,
+            'code' => 500,
+            'msg' => 'check errors',
+            'data' => $error
+        ], 500);
+    }
 }

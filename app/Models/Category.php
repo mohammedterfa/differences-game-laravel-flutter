@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'image'
+    ];
+
+    public function setImageAttribute($image){
+        if($image)
+        {
+            $ext = $image->getClientOriginalExtension();
+            $file_name = time().mt_rand(1000, 9000) . '.' . $ext;
+
+            $image->move(public_path('imgs/cats/'), $file_name);
+
+            $this->attributes['image'] = 'imgs/cats/'.$file_name;
+        }
+    }
 }

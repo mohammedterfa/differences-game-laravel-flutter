@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/admin/categories', [CategoryController::class, 'index'])->name('category.index');
+    Route::get('/admin/category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('/admin/category/store', [CategoryController::class, 'store'])->name('category.store');
 
 });
 

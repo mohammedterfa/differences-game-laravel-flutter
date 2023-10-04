@@ -44,7 +44,9 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -52,7 +54,9 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -60,7 +64,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category =  Category::find($id);
+        $category->name = $request->name;
+        $category->image = $request->image;
+        $category->save();
+
+        return redirect()->route('category.index')->with('success', 'Category updated successfully');
     }
 
     /**

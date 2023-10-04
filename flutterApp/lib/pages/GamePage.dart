@@ -46,10 +46,10 @@ class GameFooter extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         badges.Badge(
-          badgeStyle: badges.BadgeStyle(
+          badgeStyle: const badges.BadgeStyle(
             badgeColor: Mycolors.bluedark,
           ),
-          badgeContent: CircleAvatar(
+          badgeContent: const CircleAvatar(
             backgroundColor: Colors.transparent,
             radius: 10,
             child: Text(
@@ -69,10 +69,10 @@ class GameFooter extends StatelessWidget {
               )),
         ),
         badges.Badge(
-          badgeStyle: badges.BadgeStyle(
+          badgeStyle: const badges.BadgeStyle(
             badgeColor: Mycolors.bluedark,
           ),
-          badgeContent: CircleAvatar(
+          badgeContent: const CircleAvatar(
             backgroundColor: Colors.transparent,
             radius: 10,
             child: Text(

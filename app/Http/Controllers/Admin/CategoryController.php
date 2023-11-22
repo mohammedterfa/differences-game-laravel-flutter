@@ -46,7 +46,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
-        return view('admin.category.edit', compact('category'));
+        return view('admin.category.view', compact('category'));
     }
 
     /**
@@ -77,6 +77,9 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category =  Category::find($id);
+        $category->delete();
+
+        return back()->with('success', 'Category deleted successfully');
     }
 }

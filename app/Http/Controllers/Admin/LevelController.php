@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Level;
 use Illuminate\Http\Request;
 
 class LevelController extends Controller
@@ -20,7 +22,9 @@ class LevelController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.level.create', compact('categories'));
     }
 
     /**
@@ -28,7 +32,14 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $level = new Level();
+        $level->name = $request->name;
+        $level->image = $request->image;
+        $level->image2 = $request->image2;
+        $level->category_id = $request->category_id;
+        $level->save();
+
+        return redirect()->route('level.edit', $level->id)->with('success', 'Level created successfully');
     }
 
     /**
@@ -44,7 +55,9 @@ class LevelController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $level = Level::find($id);
+
+        return view('admin.level.edit', compact('level'));
     }
 
     /**
